@@ -4,7 +4,7 @@
   "description": "My Front-End Development Environment.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "webpack --version"
   },
   "repository": {
     "type": "git",
