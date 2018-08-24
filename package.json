@@ -4,7 +4,7 @@
   "description": "My Front-End Development Environment.",
   "main": "index.js",
   "scripts": {
-    "test": "webpack --version"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,8 @@
   "devDependencies": {
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.10"
   }
 }
