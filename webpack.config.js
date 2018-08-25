@@ -1,9 +1,6 @@
 const glob = require('glob');
 const path = require('path');
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
-
-const extractSCSS = new ExtractTextWebpackPlugin('css/main.css');
 
 const entries = glob.sync('./src/**/*.pug');
 
@@ -36,26 +33,30 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: extractSCSS.extract({
-          fallback: 'style-loader',
-          use: [
-            'css-loader',
-            {
-              loader: 'postcss-loader',
-              options: {
-                ident: 'postcss',
-                plugins: [
-                  postcssPresetEnv()
-                ]
-              }
-            },
-            'sass-loader'
-          ]
-        })
-      },
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].css',
+              context: 'src'
+            }
+          },
+          'extract-loader',
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: [
+                postcssPresetEnv()
+              ]
+            }
+          },
+          'sass-loader'
+        ]
+      }
     ]
   },
   plugins: [
-    extractSCSS,
   ],
 };
