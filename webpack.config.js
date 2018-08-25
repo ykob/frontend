@@ -54,6 +54,17 @@ module.exports = {
           },
           'sass-loader'
         ]
+      },
+      {
+        test: /\.js$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['env'],
+            }
+          }
+        ]
       }
     ]
   },
