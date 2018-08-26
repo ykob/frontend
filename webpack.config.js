@@ -101,6 +101,14 @@ module.exports = {
       }
     ]
   },
+  devServer: {
+    contentBase: path.join(__dirname, 'dst'),
+    compress: true,
+    open: true,
+    openPage: '',
+    port: 3000,
+    watchContentBase: true,
+  },
   plugins: [
   ],
 };

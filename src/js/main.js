@@ -1,4 +1,4 @@
-const test = async () => {
+const test = () => {
   return 'test';
 }
 

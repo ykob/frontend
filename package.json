@@ -4,6 +4,7 @@
   "description": "My Front-End Development Environment.",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server",
     "build": "webpack"
   },
   "repository": {
@@ -33,7 +34,8 @@
     "pug-html-loader": "^1.1.5",
     "sass-loader": "^7.1.0",
     "webpack": "^4.17.1",
-    "webpack-cli": "^3.1.0"
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.6"
   },
   "browserslist": [
     "last 2 version",
