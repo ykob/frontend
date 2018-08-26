@@ -1,6 +1,7 @@
 const glob = require('glob');
 const path = require('path');
 const postcssPresetEnv = require('postcss-preset-env');
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 const entries = [
     './src/js/main.js',
@@ -13,6 +14,9 @@ const entries = [
 module.exports = {
   mode: 'development',
   entry: entries,
+  plugins: [
+    new CleanWebpackPlugin('dst')
+  ],
   output: {
     filename: 'js/bundle.js',
     path: path.resolve(__dirname, 'dst')
@@ -26,7 +30,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[path][name].html',
-              context: 'src/html'
+              context: 'src/html',
             }
           },
           'extract-loader',
@@ -41,7 +45,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[path][name].css',
-              context: 'src'
+              context: 'src',
             }
           },
           'extract-loader',
@@ -76,7 +80,8 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[path][name].[ext]',
-              context: 'src'
+              context: 'src',
+              outputPath: ''
             }
           },
           {
@@ -109,6 +114,4 @@ module.exports = {
     port: 3000,
     watchContentBase: true,
   },
-  plugins: [
-  ],
 };
