@@ -12,7 +12,6 @@ const entries = [
   );
 
 module.exports = {
-  mode: 'development',
   entry: entries,
   plugins: [
     new CleanWebpackPlugin('dst')
