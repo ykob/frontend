@@ -35,7 +35,14 @@ module.exports = {
           },
           'extract-loader',
           'html-loader',
-          'pug-html-loader',
+          {
+            loader: 'pug-html-loader',
+            options: {
+              data: {
+                text: 'data text'
+              }
+            }
+          }
         ]
       },
       {
