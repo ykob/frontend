@@ -38,6 +38,7 @@ module.exports = {
           {
             loader: 'pug-html-loader',
             options: {
+              pretty: '\t',
               data: {
                 text: 'data text'
               }
