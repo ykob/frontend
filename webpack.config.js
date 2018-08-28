@@ -8,7 +8,7 @@ const entries = [
     './src/css/main.scss',
   ].concat(
     glob.sync('./src/**/*.pug'),
-    glob.sync('./src/img/**/*.*')
+    glob.sync('./src/[img|font|json]/**/*.*')
   );
 
 module.exports = {
@@ -112,6 +112,20 @@ module.exports = {
               webp: {
                 quality: 90
               }
+            }
+          }
+        ]
+      },
+      // Only copy some files.
+      {
+        test: /\.(ico|woff|woff2|eot|ttf|json)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+              context: 'src',
+              outputPath: ''
             }
           }
         ]
