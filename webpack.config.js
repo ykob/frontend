@@ -22,6 +22,7 @@ module.exports = {
   },
   module: {
     rules: [
+      // Build HTML with Pug.
       {
         test: /\.pug$/,
         use: [
@@ -46,6 +47,7 @@ module.exports = {
           }
         ]
       },
+      // Build CSS with SCSS.
       {
         test: /\.scss$/,
         use: [
@@ -70,6 +72,7 @@ module.exports = {
           'sass-loader'
         ]
       },
+      // Build JavaScript with Babel.
       {
         test: /\.js$/,
         use: [
@@ -81,6 +84,7 @@ module.exports = {
           }
         ]
       },
+      // Compress images.
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
