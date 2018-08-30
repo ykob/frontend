@@ -8,7 +8,7 @@ const entries = [
     './src/css/main.scss',
   ].concat(
     glob.sync('./src/**/*.pug'),
-    glob.sync('./src/[img|font|json]/**/*.*')
+    glob.sync('./src/*(img|font|json)/**/*.*')
   );
 
 module.exports = {
