@@ -7,7 +7,7 @@ const entries = [
     './src/js/main.js',
     './src/css/main.scss',
   ].concat(
-    glob.sync('./src/**/*.pug'),
+    glob.sync('./src/*(**|!(_**))/*.pug'),
     glob.sync('./src/*(img|font|json)/**/*.*')
   );
 
